@@ -1,0 +1,182 @@
+{
+  "data": "entirely synthetic; not an audit of a client system",
+  "cleaning": {
+    "clean": [
+      {
+        "id": "001",
+        "date": "2026-01-05",
+        "amount": "12.50",
+        "category": "parts"
+      },
+      {
+        "id": "005",
+        "date": "2026-01-08",
+        "amount": "25",
+        "category": "labour"
+      }
+    ],
+    "exceptions": [
+      {
+        "source_row": 3,
+        "original": {
+          "id": "002",
+          "date": "01/02/2026",
+          "amount": "10",
+          "category": "parts"
+        },
+        "issues": [
+          "invalid_or_ambiguous_date"
+        ]
+      },
+      {
+        "source_row": 4,
+        "original": {
+          "id": "003",
+          "date": "2026-01-06",
+          "amount": "",
+          "category": "parts"
+        },
+        "issues": [
+          "invalid_or_missing_amount"
+        ]
+      },
+      {
+        "source_row": 5,
+        "original": {
+          "id": "004",
+          "date": "2026-01-07",
+          "amount": "10",
+          "category": "parts"
+        },
+        "issues": [
+          "conflicting_id"
+        ]
+      },
+      {
+        "source_row": 6,
+        "original": {
+          "id": "004",
+          "date": "2026-01-07",
+          "amount": "11",
+          "category": "parts"
+        },
+        "issues": [
+          "conflicting_id"
+        ]
+      }
+    ],
+    "audit": [
+      {
+        "source_row": 1,
+        "action": "accepted",
+        "original": {
+          "id": "001",
+          "date": "2026-01-05",
+          "amount": " 12.50 ",
+          "category": " parts "
+        },
+        "cleaned": {
+          "id": "001",
+          "date": "2026-01-05",
+          "amount": "12.50",
+          "category": "parts"
+        }
+      },
+      {
+        "source_row": 2,
+        "action": "exact_duplicate_removed",
+        "original": {
+          "id": "001",
+          "date": "2026-01-05",
+          "amount": "12.50",
+          "category": "parts"
+        }
+      },
+      {
+        "source_row": 3,
+        "action": "quarantine",
+        "issues": [
+          "invalid_or_ambiguous_date"
+        ]
+      },
+      {
+        "source_row": 4,
+        "action": "quarantine",
+        "issues": [
+          "invalid_or_missing_amount"
+        ]
+      },
+      {
+        "source_row": 5,
+        "action": "quarantine",
+        "issues": [
+          "conflicting_id"
+        ]
+      },
+      {
+        "source_row": 6,
+        "action": "quarantine",
+        "issues": [
+          "conflicting_id"
+        ]
+      },
+      {
+        "source_row": 7,
+        "action": "accepted",
+        "original": {
+          "id": "005",
+          "date": "2026-01-08",
+          "amount": "25",
+          "category": "labour"
+        },
+        "cleaned": {
+          "id": "005",
+          "date": "2026-01-08",
+          "amount": "25",
+          "category": "labour"
+        }
+      }
+    ],
+    "input_rows": 7
+  },
+  "memory": {
+    "answers": [
+      {
+        "status": "no_match",
+        "value": null
+      },
+      {
+        "status": "match",
+        "value": "Ada"
+      },
+      {
+        "status": "match",
+        "value": "Bea"
+      }
+    ],
+    "key_sha256": "07300b735919770ce7650ff43e973358151743cbc7b5c6a8a44c4d4c4f0ae978",
+    "wrong_superseded_answer_passes": false,
+    "substring_attack_passes": false
+  },
+  "finance": {
+    "base": {
+      "units_sold": 900,
+      "revenue": 90000,
+      "operating_profit": 16000
+    },
+    "hire_without_demand": {
+      "units_sold": 900,
+      "revenue": 90000,
+      "operating_profit": 7000
+    },
+    "hire_with_demand": {
+      "units_sold": 1250,
+      "revenue": 125000,
+      "operating_profit": 21000
+    }
+  },
+  "vehicle": {
+    "synthetic_sale_price": 20000,
+    "maximum_purchase_price": 16200
+  }
+}
