@@ -31,3 +31,23 @@ The finance example excludes tax, financing, capital expenditure and working
 capital. The cleaning schema is illustrative; real mappings and missing-value
 rules require client agreement. No external API, real customer records, LLM API or
 network access is used by these scripts.
+
+## Prevalence and source-aware entity mapping
+
+Run `python research_examples.py` for invented examples.
+
+```text
+Agreed case definition + assessed denominators -> validation -> prevalence + Wilson CI
+Permitted source exports -> jurisdiction / registry-ID join -> conflict review -> provenance
+```
+
+The prevalence interval assumes independent, unweighted observations. Clustered or
+weighted surveys require a design-aware estimator; a case/control sample cannot
+estimate population prevalence. Missing outcomes are not negatives. The demo
+pools three disjoint invented groups by event and denominator counts.
+
+The mapping demo makes exact identifier joins and quarantines conflicts. It does
+not prove beneficial ownership, infer corporate relationships, or resolve fuzzy
+names. Source timestamps are retained. No paid subscriptions or API access are
+claimed; production sources require client-provided rights or permitted public
+access and an agreed schema.
